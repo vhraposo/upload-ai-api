@@ -20,9 +20,21 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos//transcription
+POST http://localhost:3333/videos/dabf9b7f-5115-42c4-804c-78cedd0697df/transcription
 Content-Type: application/json
 
 {
     "prompt": "gostosa, bonita, cheirosa"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "dabf9b7f-5115-42c4-804c-78cedd0697df",
+    "temperature": 0.5,
+    "template": "Gere um resumo da transcrição do vídeo informada a seguir: '''{transcription}'''"
 }
